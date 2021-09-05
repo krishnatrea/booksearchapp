@@ -1,3 +1,4 @@
+import 'package:booksearchapp/service/fetchfrominternet.dart';
 import 'package:flutter/material.dart';
 import '/utilities/components.dart';
 
@@ -12,10 +13,11 @@ class _LogInPageState extends State<LogInPage> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 void onTap(){
-  print(email.text);
-  print(password.text);
- print("someone touch me ");
-
+print(email.text);
+print(password.text);
+LoginInfo info = LoginInfo(email: email.text, password: password.text);
+apiCallLogin(info);
+print("someone touch me ");
 }
   @override
   Widget build(BuildContext context) {

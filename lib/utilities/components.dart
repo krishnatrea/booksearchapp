@@ -95,7 +95,6 @@ class PasswordTextField extends StatelessWidget {
 
 class LogInButton extends StatelessWidget {
  final Function()? onTap;
-
   const LogInButton({Key? key, this.onTap}) : super(key: key);
   @override
   Widget build(BuildContext context) {

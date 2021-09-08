@@ -12,13 +12,13 @@ class LogInPage extends StatefulWidget {
 class _LogInPageState extends State<LogInPage> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-void onTap(){
-print(email.text);
-print(password.text);
-LoginInfo info = LoginInfo(email: email.text, password: password.text);
-apiCallLogin(info);
-print("someone touch me ");
-}
+  void onTap(){
+  print(email.text);
+  print(password.text);
+  LoginInfo info = LoginInfo(email: email.text, password: password.text);
+  apiCallLogin(info);
+  print("someone touch me ");
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

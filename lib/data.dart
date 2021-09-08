@@ -35,7 +35,7 @@ class Class2nd {
     return Class2nd(
       ag: map['age'],
       name:  map['name'],
-      subjects: map['subject'],
+      subjects: map['subjects'],
       lang: map['lang']
     );
   }

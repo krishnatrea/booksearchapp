@@ -1,4 +1,7 @@
-import 'package:booksearchapp/service/fetchfrominternet.dart';
+import '/page/homepage.dart';
+
+import '/models/loginInfomodels.dart';
+import '/service/fetchfrominternet.dart';
 import 'package:flutter/material.dart';
 import '/utilities/components.dart';
 
@@ -12,12 +15,25 @@ class LogInPage extends StatefulWidget {
 class _LogInPageState extends State<LogInPage> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  void onTap(){
+  void onTap()async{
   print(email.text);
   print(password.text);
-  LoginInfo info = LoginInfo(email: email.text, password: password.text);
-  apiCallLogin(info);
-  print("someone touch me ");
+  LoginInfo info = LoginInfo(email: email.text , password:  password.text);
+  LoginApiResponse loginApiResponse = await apiCallLogin(info); 
+  if(loginApiResponse.error == null){
+    print("login successfull");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return HomePage();
+          },
+        ),
+      );
+  }else {
+    print("password or usrename bhul gya kya"); 
+  }
+    print("I am loged in ");
   }
   @override
   Widget build(BuildContext context) {

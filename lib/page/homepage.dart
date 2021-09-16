@@ -1,4 +1,7 @@
+import 'package:booksearchapp/models/bookdata.dart';
 import 'package:booksearchapp/models/listofusers.dart';
+import 'package:booksearchapp/page/bookspage.dart';
+import 'package:booksearchapp/service/fetchfrominternet.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -190,14 +193,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          ListofBooks getval = await fetchBooks();
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return Bookspage(books: getval,);
+          }));
+        },
+        child: Icon(Icons.book_online), ),
       body: Padding(
         padding: const EdgeInsets.only(top : 20),
         child: SingleChildScrollView(
           child: Container(
-        
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
-              
               children: [
                 for (UserDetail user in listofusers!)
                    Padding(

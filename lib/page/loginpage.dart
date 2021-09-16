@@ -19,8 +19,8 @@ class _LogInPageState extends State<LogInPage> {
   print(password.text);
   LoginInfo info = LoginInfo(email: email.text , password:  password.text);
   LoginApiResponse loginApiResponse = await apiCallLogin(info); 
-  if(loginApiResponse.error == null){
-    print("login successfull");
+  // if(loginApiResponse.error == null){
+  //   print("login successfull");
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -29,9 +29,9 @@ class _LogInPageState extends State<LogInPage> {
           },
         ),
       );
-  }else {
-    print("password or usrename bhul gya kya"); 
-  }
+  // }else {
+  //   print("password or usrename bhul gya kya"); 
+  // }
     print("I am loged in ");
   }
   @override

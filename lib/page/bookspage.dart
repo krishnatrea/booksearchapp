@@ -13,18 +13,37 @@ class _BookspageState extends State<Bookspage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey[300],
       body: Container(
         child: Padding(
           padding: const EdgeInsets.only(top: 30),
-          child: GridView.count(
-            crossAxisCount: 2,
-            children: [
-              for (Books book in books!.listofbooks!)
-                Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: ListTile(title: Text(book.volumeInfo!.title!), leading: Image.network(book.volumeInfo!.imageLink!.smallThumbnail!),),
-                )
-            ],
+          child: SingleChildScrollView(
+            // physics: ,
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              // crossAxisCount: 2,
+              children: [
+                for (Books book in books!.listofbooks!)
+                  Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Container(
+                      height: 200,
+                      width: 200,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(30),
+                        elevation: 5,
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          // crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.network(book.volumeInfo!.imageLink!.thumbnail!,height: 150, ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+              ],
+            ),
           ),
         ),
       ),

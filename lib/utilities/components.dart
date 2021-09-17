@@ -50,7 +50,7 @@ class EmailTextField extends StatelessWidget {
 }
 
 class PasswordTextField extends StatelessWidget {
-  TextEditingController controller ; 
+ TextEditingController controller; 
  PasswordTextField({
     required this.controller,
   });

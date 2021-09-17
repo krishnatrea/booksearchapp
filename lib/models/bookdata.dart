@@ -15,7 +15,7 @@ factory ListofBooks.fromMap(Map<String, dynamic> map) {
   }
 }
 
-List<Books> generatelistofbooks (Map<String, dynamic> map){
+List<Books> generatelistofbooks(Map<String, dynamic> map){
   List<Books> ind = [];
     for(Map<String,dynamic> i in map['items']){
       Books m = Books.fromMap(i);
@@ -47,7 +47,6 @@ class Books {
       volumeInfo: VolumeInfo.fromMap(map['volumeInfo']),
     );
   }
-
 }
 
 class VolumeInfo {

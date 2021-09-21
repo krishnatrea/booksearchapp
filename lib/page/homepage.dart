@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () async {
           ListofBooks getval = await fetchBooks();
           Navigator.push(context, MaterialPageRoute(builder: (context){
-            return Bookspage(books: getval,);
+            return Bookspage(books: getval);
           }));
         },
         child: Icon(Icons.book_online), ),

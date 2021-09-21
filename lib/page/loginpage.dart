@@ -92,3 +92,13 @@ class _LogInPageState extends State<LogInPage> {
     );
   }
 }
+
+/* 
+          manger/ Loginpage
+              /    \
+            /       \
+          email      password
+          /           \
+        /              \
+      Emailtextfield   passwordtextfield
+ */
